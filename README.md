@@ -14,3 +14,67 @@
 12. run npm run reset-project
 13. rerun `npx expo start`
 14. code
+
+
+# How to setup nativewind in react app
+1. `npm i nativewind tailwindcss react-native-reanimated react-native-safe-area-context`
+2. after installation run `npx tailwindcss init -p`
+3. go to tailwind.config.css and edit content: e.g.
+ ```js
+   module.exports = {
+  content: [
+    "./app/**/*.{js,jsx,ts,tsx}",
+    "./components/**/*.{js,jsx,ts,tsx}"
+  ],
+  presets: [require("nativewind/preset")],
+  theme: {
+    extend: {
+      colors: {
+        primary: "#030014",
+        secondary: '#151312',
+        light: {
+          100: "#d6c6ff",
+          200: "#a8b5db",
+          300: "#9ca4ab"
+        },
+        dark: {
+          100: "#221f3d",
+          200: "#0f0d23",
+        },
+        accent: "#ab8bff",
+      }
+    },
+  },
+  plugins: [],
+}
+```
+4. in app folder create new file globals.css
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+5. in root directory create babel.config.js
+```js
+module.exports = function (api) {
+    api.cache(true);
+    return {
+        presets: [
+            ["babel-preset-expo", { jsxImportSource: "nativewind" }],
+            "nativewind/babel",
+        ],
+    };
+};
+```
+6. in root directory create metro.config.js
+```js
+const { getDefaultConfig } = require("expo/metro-config");
+const { withNativeWind } = require('nativewind/metro');
+
+const config = getDefaultConfig(__dirname)
+
+module.exports = withNativeWind(config, { input: './app/globals.css' })
+```
+
+7. in app/_layout.tsx import the globals file `import './globals.css';`
+8. in root directory, create a file called nativewind-env.d.ts and insert this line: `/// <reference types="nativewind/types" />`
