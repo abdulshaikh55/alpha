@@ -11,7 +11,7 @@ const Profile = () => {
     <SafeAreaView className="flex-1 bg-primary_bg">
       <View className="m-6 mt-10 flex-row justify-between border-4 border-frame py-5 px-4 rounded-3xl">
         <View>
-          <Text className="text-white text-3xl">Profile Name</Text>
+          <Text className="text-white text-3xl">Rick Sanchez</Text>
           <Text className="text-white text-sm">wubbalubbadubdub@portal.gun</Text>
           <Text className="text-white text-lg">Travelling Since July 2025</Text>
         </View>
