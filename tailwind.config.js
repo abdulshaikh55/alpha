@@ -9,6 +9,8 @@ module.exports = {
     extend: {
       colors: {
         primary_bg: "#011936",
+        buttonText: "#011936",
+        buttonColor: "#ffd33d",
         secondary: '#151312',
         light: {
           100: "#d6c6ff",
@@ -20,7 +22,9 @@ module.exports = {
           200: "#0f0d23",
         },
         accent: "#ab8bff",
-        text_light: "#FEF5EF"
+        text_light: "#FEF5EF",
+        frame: "#3F88C5",
+        list: "#37FF8B",
       }
     },
   },

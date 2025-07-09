@@ -29,7 +29,7 @@ export default function TabLayout() {
         position: "absolute",
         overflow: "hidden",
         borderWidth: 1,
-        borderColor: "gold",
+        borderColor: "#ffd33d",
       }
     }}>
       <Tabs.Screen
