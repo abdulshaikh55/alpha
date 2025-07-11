@@ -9,6 +9,9 @@ const courses = [
   { id: 3, name: "C++ Chronicles: Code of Legends", complete: 80, icon: cppIcon },
   { id: 4, name: "React Native: Building Worlds on Mobile", complete: 50, icon: reactIcon },
   { id: 5, name: "Node Odyssey: Journey to the Backend", complete: 20, icon: nodeIcon },
+  { id: 6, name: "AI Foundations: Machine Learning Demystified", complete: 40, icon: require("@/assets/images/ai.png") },
+  { id: 7, name: "Cybersecurity Essentials: Defend the Digital Realm", complete: 10, icon: require("@/assets/images/cybersecurity.png") },
+  { id: 8, name: "Cloud Computing: Navigating the Sky", complete: 55, icon: require("@/assets/images/cloud.png") },
 ]
 
 export default courses;
