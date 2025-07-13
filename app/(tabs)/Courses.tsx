@@ -3,15 +3,7 @@ import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import courses from '@/assets/data/courses'
 import CourseButton from '@/components/CourseButton'
-
-const Header = () => {
-  return (
-    <View className='m-6 mt-10'>
-      <Text className="mb-6 text-text_light text-4xl text-center">Courses</Text>
-
-    </View>
-  )
-}
+import Header from '@/components/Header';
 
 const Courses = () => {
   return (
@@ -20,7 +12,7 @@ const Courses = () => {
         <FlatList
           data={courses}
           keyExtractor={item => item.id.toString()}
-          ListHeaderComponent={Header}
+          ListHeaderComponent={<Header title="Courses" style="m-6 mt-10" textStyle="mb-6 text-text_light text-4xl text-center" />}
           contentContainerStyle={{ paddingTop: 0, paddingBottom: 24, flexGrow: 1 }}
           renderItem={({ item, index }) => (
             <View style={{ position: 'relative' }} className="items-start bg-white/10 rounded-lg px-4 py-2 mb-2 flex-col h-40 justify-between overflow-hidden">

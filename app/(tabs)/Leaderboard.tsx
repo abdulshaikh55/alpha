@@ -2,6 +2,7 @@ import { View, Text, Image, FlatList } from 'react-native'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import leaderBoard from '@/assets/data/leaderboard';
+import Header from '@/components/Header';
 
 const Leaderboard = () => {
   const first = leaderBoard[0];
@@ -11,7 +12,7 @@ const Leaderboard = () => {
 
   const renderTopThree = () => (
     <View className="m-6 mt-10">
-      <Text className="mb-6 text-text_light text-4xl text-center">Leaderboard</Text>
+      <Header title="Leaderboard" textStyle="mb-6 text-text_light text-4xl text-center" />
       <View className="flex-row justify-center items-end h-72 w-full">
         {/* Second Place */}
         <View className="items-center mx-2">
