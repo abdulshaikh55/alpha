@@ -25,6 +25,18 @@ module.exports = {
         text_light: "#FEF5EF",
         frame: "#3F88C5",
         list: "#37FF8B",
+      },
+      fontFamily: {
+        lato: ['Lato-Regular'],
+        lato_bold: ['Lato-Bold'],
+        lato_italic: ['Lato-Italic'],
+        lato_bolditalic: ['Lato-BoldItalic'],
+        lato_black: ['Lato-Black'],
+        lato_blackitalic: ['Lato-BlackItalic'],
+        lato_light: ['Lato-Light'],
+        lato_lightitalic: ['Lato-LightItalic'],
+        lato_thin: ['Lato-Thin'],
+        lato_thinitalic: ['Lato-ThinItalic'],
       }
     },
   },
