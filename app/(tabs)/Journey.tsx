@@ -36,6 +36,7 @@ const Journey = () => {
         </View>
 
         <FlatList
+          showsVerticalScrollIndicator={false}
           data={courses}
           keyExtractor={item => item.id.toString()}
           ListHeaderComponent={<Header title="Your Courses" />}

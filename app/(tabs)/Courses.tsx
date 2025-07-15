@@ -13,6 +13,7 @@ const Courses = () => {
           data={courses}
           keyExtractor={item => item.id.toString()}
           ListHeaderComponent={<Header title="Courses" style="m-6 mt-10" textStyle="mb-6 text-text_light text-4xl text-center" />}
+          showsVerticalScrollIndicator={false}
           contentContainerStyle={{ paddingTop: 0, paddingBottom: 24, flexGrow: 1 }}
           renderItem={({ item, index }) => (
             <View style={{ position: 'relative' }} className="items-start bg-white/10 rounded-lg px-4 py-2 mb-2 flex-col h-40 justify-between overflow-hidden">

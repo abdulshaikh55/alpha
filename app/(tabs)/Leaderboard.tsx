@@ -59,6 +59,7 @@ const Leaderboard = () => {
           keyExtractor={item => item.id.toString()}
           ListHeaderComponent={renderTopThree}
           contentContainerStyle={{ paddingTop: 0, paddingBottom: 24, flexGrow: 1 }}
+          showsVerticalScrollIndicator={false}
           renderItem={({ item, index }) => (
             <View className="flex-row items-center bg-white/10 rounded-xl px-4 py-2 mb-2">
               {/* Profile Pic */}
