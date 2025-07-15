@@ -38,7 +38,7 @@ export default function Index() {
             setSearchPhrase={setSearchPhrase}
           />
         </View>
-        <Text className="text-text_light font-bold text-2xl mt-3">Hello Rick!</Text>
+        <Text className="text-text_light  text-2xl mt-3 font-lato_bold">Hello Rick!</Text>
 
         <View className="mt-4">
           <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 12 }}>
@@ -52,7 +52,7 @@ export default function Index() {
 
         {/* User last visited course */}
         <View>
-          <Text className="font-lato font-semibold text-gray-300 text-lg my-3 mt-6">Last Visited</Text>
+          <Text className="font-semibold text-gray-300 text-lg my-3 mt-6">Last Visited</Text>
           <LastVisitedCourseCard name={lastVisited.name} icon={lastVisited.icon} progress={0.35} />
         </View>
 
