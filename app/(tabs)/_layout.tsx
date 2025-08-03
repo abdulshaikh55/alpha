@@ -1,5 +1,5 @@
-import { Tabs } from 'expo-router';
 import Ionicons from '@expo/vector-icons/Ionicons';
+import { Tabs } from 'expo-router';
 
 
 export default function TabLayout() {
@@ -30,7 +30,7 @@ export default function TabLayout() {
         overflow: "hidden",
         borderWidth: 1,
         borderColor: "#ffd33d",
-      }
+      },
     }}>
       <Tabs.Screen
         name="index"

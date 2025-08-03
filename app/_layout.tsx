@@ -1,12 +1,14 @@
-import { Stack, SplashScreen } from "expo-router";
+import { AuthProvider, useAuth } from '@/context/AuthContext';
 import { useFonts } from 'expo-font';
+import { SplashScreen, Stack } from "expo-router";
 import { useCallback } from "react";
 import { View } from "react-native";
 import './globals.css';
 
 SplashScreen.preventAutoHideAsync();
 
-export default function RootLayout() {
+function RootLayoutContent() {
+  const isLoggedIn = useAuth();
   const [fontsLoaded] = useFonts({
     'Lato-Regular': require('@/assets/fonts/Lato-Regular.ttf'),
     'Lato-Bold': require('@/assets/fonts/Lato-Bold.ttf'),
@@ -27,14 +29,29 @@ export default function RootLayout() {
   }, [fontsLoaded]);
 
   if (!fontsLoaded) {
-    return null; // or <SplashScreen />
+    return null;
   }
+
+
 
   return (
     <View onLayout={onLayoutRootView} style={{ flex: 1 }}>
       <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Protected guard={!isLoggedIn}>
+          <Stack.Screen name="(auth)" options={{ headerShown: false }} />
+        </Stack.Protected>
+        <Stack.Protected guard={isLoggedIn as any}>
+          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        </Stack.Protected>
       </Stack>
     </View>
+  );
+}
+
+export default function RootLayout() {
+  return (
+    <AuthProvider>
+      <RootLayoutContent />
+    </AuthProvider>
   );
 }

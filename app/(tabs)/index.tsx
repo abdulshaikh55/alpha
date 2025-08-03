@@ -1,10 +1,10 @@
-import SearchBar from "@/components/SearchBar";
-import { Text, View, ScrollView, Image } from "react-native";
-import React, { useState } from "react";
-import { SafeAreaView } from "react-native-safe-area-context";
-import LastVisitedCourseCard from "@/components/LastVisitedCourseCard";
 import courses from "@/assets/data/courses";
+import LastVisitedCourseCard from "@/components/LastVisitedCourseCard";
+import SearchBar from "@/components/SearchBar";
 import { Ionicons } from "@expo/vector-icons";
+import React, { useState } from "react";
+import { Image, ScrollView, Text, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 const banner = require("@/assets/images/banner.png");
 
 const current_course_id: number = 3;
@@ -27,6 +27,7 @@ export default function Index() {
   let lastVisited = courses[current_course_id];
   const [clicked, setClicked] = useState(false);
   const [searchPhrase, setSearchPhrase] = useState<string>('');
+
   return (
     <SafeAreaView className="flex-1 bg-primary_bg">
       <View className="mx-6">

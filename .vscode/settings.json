@@ -3,5 +3,11 @@
     "source.fixAll": "explicit",
     "source.organizeImports": "explicit",
     "source.sortMembers": "explicit"
-  }
+  },
+  "workbench.colorCustomizations": {
+    "terminal.background": "#181722",
+    "terminal.foreground": "#DCDFE4"
+  },
+  "editor.tabSize": 2,
+  "prettier.configPath": "./../.prettierrc"
 }

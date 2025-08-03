@@ -1,4 +1,4 @@
-import { View, Text, FlatList, ImageBackground } from 'react-native'
+import { View, Text, FlatList, ImageBackground, ScrollView } from 'react-native'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import courses from '@/assets/data/courses'
@@ -24,37 +24,14 @@ const Journey = () => {
       </View>
 
       <View className=" rounded-s-sm flex-1 rounded-3xl mx-6 mt-0">
-        {/* latest course */}
         <Header title='Your Latest Path' />
-        <View>
-          {(() => {
-            const currentCourse = courses.find(course => course.id === User.current_course_id);
-            return (
-              <LastVisitedCourseCard name={currentCourse?.name} icon={currentCourse?.icon} progress={0.35} />
-            );
-          })()}
-        </View>
-
-        <FlatList
-          showsVerticalScrollIndicator={false}
-          data={courses}
-          keyExtractor={item => item.id.toString()}
-          ListHeaderComponent={<Header title="Your Courses" />}
-          contentContainerStyle={{ paddingTop: 0, paddingBottom: 24, flexGrow: 1 }}
-          renderItem={({ item, index }) => (
-            <View style={{ position: 'relative' }} className="items-start bg-white/10 rounded-lg px-4 py-2 mb-2 flex-col h-40 justify-between overflow-hidden">
-              <ImageBackground
-                source={item.icon}
-                style={{ width: 100, height: 100 }}
-                imageStyle={{ opacity: 0.25 }}
-                className='absolute top-0 right-0'
-              >
-              </ImageBackground>
-              <Text className='text-text_light font-semibold my-2 text-lg'>{item.name}</Text>
-              <CourseButton screen='' root={true} value='Continue your Journey' />
-            </View>
-          )}
-        />
+        <ScrollView >
+          <View className='text-center bg-green-600 px-4 py-8 rounded-full self-center justify-center'>
+            <Text className='text-xl color-slate-200 font-lato_bolditalic text-center'>
+              CourseName
+            </Text>
+          </View>
+        </ScrollView>
       </View>
     </SafeAreaView>
   )
