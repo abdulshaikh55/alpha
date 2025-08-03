@@ -8,7 +8,8 @@ import './globals.css';
 SplashScreen.preventAutoHideAsync();
 
 function RootLayoutContent() {
-  const isLoggedIn = useAuth();
+  const { isLoggedIn } = useAuth();
+
   const [fontsLoaded] = useFonts({
     'Lato-Regular': require('@/assets/fonts/Lato-Regular.ttf'),
     'Lato-Bold': require('@/assets/fonts/Lato-Bold.ttf'),
@@ -40,7 +41,7 @@ function RootLayoutContent() {
         <Stack.Protected guard={!isLoggedIn}>
           <Stack.Screen name="(auth)" options={{ headerShown: false }} />
         </Stack.Protected>
-        <Stack.Protected guard={isLoggedIn as any}>
+        <Stack.Protected guard={isLoggedIn}>
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         </Stack.Protected>
       </Stack>
