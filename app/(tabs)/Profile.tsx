@@ -1,14 +1,38 @@
 import Button from '@/components/Button';
 import ListItem from '@/components/ListItem';
+import LogoutAlert from '@/components/LogoutAlert';
 import { useAuth } from '@/context/AuthContext';
-import React from 'react';
+import React, { useState } from 'react';
 import { Image, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
+
 const ProfilePic = require('./../../assets/images/rick_sanchez.jpg');
+
+// const showLogoutAlert = (logout: any) => {
+//   Alert.alert(
+//     'Are you sure?',
+//     'Do you really want to logout?',
+//     [
+//       { text: 'Cancel', style: 'cancel' },
+//       { text: 'Logout', onPress: logout, style: 'destructive' },
+//     ],
+//     { cancelable: true },
+//   );
+// };
 
 const Profile = () => {
   const { logout } = useAuth();
+  const [logoutModalVisible, setLogoutModalVisible] = useState(false);
+
+  const openLogoutModal = () => setLogoutModalVisible(true);
+  const closeLogoutModal = () => setLogoutModalVisible(false);
+
+  const handleLogout = () => {
+    closeLogoutModal();
+    logout();
+  }
+
   return (
     <SafeAreaView className="flex-1 bg-primary_bg">
       <View className="m-6 mt-10 flex-row justify-between border-4 border-frame py-5 px-4 rounded-3xl">
@@ -31,9 +55,12 @@ const Profile = () => {
         <ListItem iconName='help-circle' label='Get Help' rightIcon={'arrow-forward-sharp'} />
       </View>
 
-      <TouchableOpacity onPress={logout} className="bg-buttonColor px-6 py-3 rounded-full min-w-40 items-center mx-5" >
+      <TouchableOpacity onPress={openLogoutModal} className="bg-buttonColor px-6 py-3 rounded-full min-w-40 items-center mx-5" >
         <Text className="text-buttonText text-lg font-bold">Logout</Text>
       </TouchableOpacity>
+      <LogoutAlert visible={logoutModalVisible}
+        onCancel={closeLogoutModal} onLogout={handleLogout} />
+
 
     </SafeAreaView>
   )
