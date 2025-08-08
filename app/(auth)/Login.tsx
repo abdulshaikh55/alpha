@@ -5,15 +5,16 @@ import React, { useState } from 'react';
 import { Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 const Login = () => {
-  const { login } = useAuth();
+  const { login, isLoggedIn } = useAuth();
   const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleLogin = async () => {
-    console.log('login')
-    await login();
-    router.replace('/(tabs)');
+    await login(email, password);
+    if (isLoggedIn) {
+      router.replace('/(tabs)');
+    }
   };
 
   return (

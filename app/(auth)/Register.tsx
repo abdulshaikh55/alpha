@@ -7,17 +7,22 @@ import { Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 
 const Register = () => {
-  const { signup } = useAuth();
+  const { signup, isLoggedIn } = useAuth();
   const router = useRouter();
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
-  const handleLogin = async () => {
-    console.log('login')
-    await login();
-    router.replace('/(tabs)');
+  const handleSignup = async () => {
+    if (password !== confirmPassword) {
+      alert('Passwords do not match');
+      return;
+    }
+    await signup(email, password);
+    if (isLoggedIn) {
+      router.replace('/(tabs)');
+    }
   };
 
 
@@ -62,7 +67,7 @@ const Register = () => {
         />
         <TouchableOpacity
           className="bg-black w-full py-3 rounded-md items-center"
-          onPress={handleLogin}
+          onPress={handleSignup}
         >
           <Text className="text-white font-bold text-lg">Sign up</Text>
         </TouchableOpacity>
