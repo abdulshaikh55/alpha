@@ -59,7 +59,7 @@ export default function TabLayout() {
           ),
         }}
       />
-      <Tabs.Screen
+      {/* <Tabs.Screen
         name="Leaderboard"
         options={{
           title: 'Leaderboard',
@@ -67,7 +67,7 @@ export default function TabLayout() {
             <Ionicons name={focused ? 'bonfire' : 'bonfire-outline'} color={color} size={24} />
           ),
         }}
-      />
+      /> */}
       <Tabs.Screen
         name="Profile"
         options={{

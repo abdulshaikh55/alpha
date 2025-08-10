@@ -9,20 +9,8 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 const ProfilePic = require('./../../assets/images/rick_sanchez.jpg');
 
-// const showLogoutAlert = (logout: any) => {
-//   Alert.alert(
-//     'Are you sure?',
-//     'Do you really want to logout?',
-//     [
-//       { text: 'Cancel', style: 'cancel' },
-//       { text: 'Logout', onPress: logout, style: 'destructive' },
-//     ],
-//     { cancelable: true },
-//   );
-// };
-
 const Profile = () => {
-  const { logout } = useAuth();
+  const { logout, userInfo } = useAuth();
   const [logoutModalVisible, setLogoutModalVisible] = useState(false);
 
   const openLogoutModal = () => setLogoutModalVisible(true);
@@ -38,7 +26,7 @@ const Profile = () => {
       <View className="m-6 mt-10 flex-row justify-between border-4 border-frame py-5 px-4 rounded-3xl">
         <View>
           <Text className="text-white text-3xl">Rick Sanchez</Text>
-          <Text className="text-white text-sm">wubbalubbadubdub@portal.gun</Text>
+          <Text className="text-white text-sm">{userInfo.arguments}</Text>
           <Text className="text-white text-lg">Travelling Since July 2025</Text>
         </View>
         <Image source={ProfilePic} className='rounded-full h-28 w-28 ' />
