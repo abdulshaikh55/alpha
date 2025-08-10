@@ -42,11 +42,11 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="Courses"
+        name="Maps"
         options={{
-          title: 'Courses',
+          title: 'Maps',
           tabBarIcon: ({ color, focused }) => (
-            <Ionicons name={focused ? 'book' : 'book-outline'} color={color} size={24} />
+            <Ionicons name={focused ? 'map' : 'map-outline'} color={color} size={24} />
           ),
         }}
       />

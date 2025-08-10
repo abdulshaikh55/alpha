@@ -1,10 +1,7 @@
-import { View, Text, FlatList, ImageBackground, ScrollView } from 'react-native'
-import React from 'react'
-import { SafeAreaView } from 'react-native-safe-area-context'
-import courses from '@/assets/data/courses'
-import CourseButton from '@/components/CourseButton';
 import Header from '@/components/Header';
-import LastVisitedCourseCard from '@/components/LastVisitedCourseCard';
+import React from 'react';
+import { ScrollView, Text, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const User = {
   current_course_id: 3,

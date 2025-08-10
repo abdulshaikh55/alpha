@@ -1,7 +1,7 @@
-import { View, Text, ImageBackground, ImageSourcePropType } from 'react-native'
 import React from 'react';
+import { ImageBackground, ImageSourcePropType, Text, View } from 'react-native';
+import MapButton from './MapButton';
 import Progress from './Progress';
-import CourseButton from './CourseButton';
 
 interface LastVisitedCourseCardProps {
   icon: ImageSourcePropType,
@@ -22,7 +22,7 @@ const LastVisitedCourseCard: React.FC<LastVisitedCourseCardProps> = ({ icon, nam
 
       <Text className='text-text_light font-semibold my-2 text-lg'>{name ? name : "MetaGlobals"}</Text>
       <Progress progress={progress ? progress : 0} color='#ffd33d' width={290} height={15} />
-      <CourseButton screen='' root={true} value='Continue your Journey' />
+      <MapButton screen='' root={true} value='Continue your Journey' />
 
     </View>
   )

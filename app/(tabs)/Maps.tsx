@@ -1,18 +1,18 @@
-import { View, Text, FlatList, ImageBackground } from 'react-native'
-import React from 'react'
-import { SafeAreaView } from 'react-native-safe-area-context'
 import courses from '@/assets/data/courses'
-import CourseButton from '@/components/CourseButton'
-import Header from '@/components/Header';
+import Header from '@/components/Header'
+import MapButton from '@/components/MapButton'
+import React from 'react'
+import { FlatList, ImageBackground, Text, View } from 'react-native'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
-const Courses = () => {
+const Maps = () => {
   return (
     <SafeAreaView className="flex-1 bg-primary_bg">
       <View className=" rounded-s-sm flex-1 rounded-3xl m-6 mt-0">
         <FlatList
           data={courses}
           keyExtractor={item => item.id.toString()}
-          ListHeaderComponent={<Header title="Courses" style="m-6 mt-10" textStyle="mb-6 text-text_light text-4xl text-center" />}
+          ListHeaderComponent={<Header title="Maps" style="m-6 mt-10" textStyle="mb-6 text-text_light text-4xl text-center" />}
           showsVerticalScrollIndicator={false}
           contentContainerStyle={{ paddingTop: 0, paddingBottom: 24, flexGrow: 1 }}
           renderItem={({ item, index }) => (
@@ -25,7 +25,7 @@ const Courses = () => {
               >
               </ImageBackground>
               <Text className='text-text_light font-semibold my-2 text-lg'>{item.name}</Text>
-              <CourseButton screen='' root={true} value='Start Journey' />
+              <MapButton screen='' root={true} value='Start Journey' />
             </View>
           )}
         />
@@ -34,4 +34,4 @@ const Courses = () => {
   )
 }
 
-export default Courses
+export default Maps

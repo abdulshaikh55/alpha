@@ -15,9 +15,9 @@
  */
 
 
-import { Text, TouchableOpacity } from 'react-native'
-import React from 'react'
-import { RelativePathString, useRouter } from 'expo-router'
+import { RelativePathString, useRouter } from 'expo-router';
+import React from 'react';
+import { Text, TouchableOpacity } from 'react-native';
 
 interface Props {
   screen: string,
@@ -25,7 +25,7 @@ interface Props {
   value: string,
 }
 
-const CourseButton = ({ screen, root, value }: Props) => {
+const MapButton = ({ screen, root, value }: Props) => {
   const router = useRouter();
   const route: RelativePathString = root
     ? ("/" + screen) as RelativePathString
@@ -40,4 +40,4 @@ const CourseButton = ({ screen, root, value }: Props) => {
   )
 }
 
-export default CourseButton
+export default MapButton
