@@ -22,7 +22,7 @@ const LastVisitedCourseCard: React.FC<LastVisitedCourseCardProps> = ({ icon, nam
 
       <Text className='text-text_light font-semibold my-2 text-lg'>{name ? name : "MetaGlobals"}</Text>
       <Progress progress={progress ? progress : 0} color='#ffd33d' width={290} height={15} />
-      <MapButton screen='' root={true} value='Continue your Journey' />
+      <MapButton value='Continue your Journey' />
 
     </View>
   )

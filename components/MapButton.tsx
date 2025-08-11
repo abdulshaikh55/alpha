@@ -20,20 +20,17 @@ import React from 'react';
 import { Text, TouchableOpacity } from 'react-native';
 
 interface Props {
-  screen: string,
-  root: boolean,
+  screen?: RelativePathString,
   value: string,
+  onPress?: () => void,
 }
 
-const MapButton = ({ screen, root, value }: Props) => {
+const MapButton = ({ screen, value, onPress }: Props) => {
   const router = useRouter();
-  const route: RelativePathString = root
-    ? ("/" + screen) as RelativePathString
-    : ("/(tabs)/" + screen) as RelativePathString;
   return (
     <TouchableOpacity
       className="bg-white px-6 py-3 rounded-lg min-w-40 items-center self-center mb-2 w-full"
-      onPress={() => router.push(route)}
+      onPress={onPress ? onPress : () => router.push(screen ? screen : '/(tabs)')}
     >
       <Text className="text-buttonText text-base font-bold">{value}</Text>
     </TouchableOpacity>

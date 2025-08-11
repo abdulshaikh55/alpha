@@ -1,7 +1,7 @@
 import Header from '@/components/Header'
-import MapButton from '@/components/MapButton'
+import { useRouter } from 'expo-router'
 import React, { useEffect, useState } from 'react'
-import { FlatList, Text, View } from 'react-native'
+import { FlatList, Text, TouchableOpacity, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { fetchMap } from '../../services/api'
 
@@ -14,6 +14,7 @@ const Maps = () => {
   const [maps, setMaps] = useState<Map[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const router = useRouter();
 
   useEffect(() => {
     const loadMaps = async () => {
@@ -21,7 +22,6 @@ const Maps = () => {
         setLoading(true);
         const data = await fetchMap();
         setMaps(data);
-        console.log(data)
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Failed to fetch maps');
         console.error("Error fetching maps:", err);
@@ -65,7 +65,17 @@ const Maps = () => {
           renderItem={({ item, index }) => (
             <View style={{ position: 'relative' }} className="items-start bg-white/10 rounded-lg px-4 py-2 mb-2 flex-col h-40 justify-between overflow-hidden">
               <Text className='text-text_light font-semibold my-2 text-lg'>{item.map_title}</Text>
-              <MapButton value='Start Journey' />
+              <TouchableOpacity
+                className="bg-white px-6 py-3 rounded-lg min-w-40 items-center self-center mb-2 w-full"
+                onPress={() =>
+                  router.push({
+                    pathname: "/(tabs)/Maps/Details",
+                    params: { mapId: item.id },
+                  })
+                }
+              >
+                <Text className="text-buttonText text-base font-bold">View Journies</Text>
+              </TouchableOpacity>
             </View>
           )}
         />
