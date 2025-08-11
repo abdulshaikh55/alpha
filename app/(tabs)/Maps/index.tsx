@@ -3,7 +3,7 @@ import MapButton from '@/components/MapButton'
 import React, { useEffect, useState } from 'react'
 import { FlatList, Text, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { fetchMap } from '../services/api'
+import { fetchMap } from '../../services/api'
 
 interface Map {
   id: number;
@@ -47,7 +47,7 @@ const Maps = () => {
     return (
       <SafeAreaView className="flex-1 bg-primary_bg">
         <View className="flex-1 justify-center items-center">
-          <Text className="text-text_light text-lg text-red-400">Error: {error}</Text>
+          <Text className="text-lg text-red-400">Error: {error}</Text>
         </View>
       </SafeAreaView>
     );
@@ -65,7 +65,7 @@ const Maps = () => {
           renderItem={({ item, index }) => (
             <View style={{ position: 'relative' }} className="items-start bg-white/10 rounded-lg px-4 py-2 mb-2 flex-col h-40 justify-between overflow-hidden">
               <Text className='text-text_light font-semibold my-2 text-lg'>{item.map_title}</Text>
-              <MapButton screen='' root={true} value='Start Journey' />
+              <MapButton value='Start Journey' />
             </View>
           )}
         />

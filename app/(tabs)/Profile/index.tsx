@@ -7,7 +7,7 @@ import { Image, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 
-const ProfilePic = require('./../../assets/images/rick_sanchez.jpg');
+const ProfilePic = require('./../../../assets/images/rick_sanchez.jpg');
 
 const Profile = () => {
   const { logout, userInfo } = useAuth();
