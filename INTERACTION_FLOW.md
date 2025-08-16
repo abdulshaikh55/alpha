@@ -4,8 +4,11 @@ Purpose of Documentation: To outline the end-to-end flow of user interactions wi
 
 > Legend
 > [!designed]: Screen/component not designed or planned
+>
 > [!implemented]: Screen/component not implemented
+>
 > [!personalized]: Screen/component not customized for the app theme
+>
 > [!backend]: Screen/component lacks intended backend support
 
 ## Intendend Audience:
