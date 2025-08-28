@@ -7,7 +7,7 @@ const NotFoundScreen = () => {
     <>
       <Stack.Screen options={{ title: 'Oops! Not Found' }} />
       <View className='flex-1 bg-primary justify-center items-center'>
-        <Link href={'/'} className='text-2xl underline text-white'>Go back to Home</Link>
+        <Link href={'/(tabs)'} className='text-2xl underline text-white'>Go back to Home</Link>
       </View>
     </>
   )
