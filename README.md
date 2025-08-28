@@ -78,3 +78,10 @@ module.exports = withNativeWind(config, { input: './app/globals.css' })
 
 7. in app/_layout.tsx import the globals file `import './globals.css';`
 8. in root directory, create a file called nativewind-env.d.ts and insert this line: `/// <reference types="nativewind/types" />`
+
+## Tech Stack and their resources
+
+1. React Native - <https://reactnative.dev/docs/getting-started>
+2. Expo - <https://docs.expo.dev/>
+3. NativeWind - <https://www.nativewind.dev/docs>
+4. Supabase - <https://supabase.com/docs>

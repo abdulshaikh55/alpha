@@ -3,6 +3,7 @@
 Purpose of Documentation: To outline the end-to-end flow of user interactions within the app.
 
 > Legend
+>
 > [!designed]: Screen/component not designed or planned
 >
 > [!implemented]: Screen/component not implemented
